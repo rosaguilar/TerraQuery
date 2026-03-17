@@ -1,0 +1,40 @@
+# Dependencies
+node_modules/
+
+# Build output
+dist/
+
+# Environment
+.env
+.env.local
+.env.*.local
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+npm-debug.log*
+
+# Testing
+coverage/
+
+# Google Cloud temp credentials
+temp-sa-key.json
+temp-sa.json
+temp-test-key.json
+.gcp-credentials.json
+service-account-key.json
+*.json.enc
+
+# Temporary
+tmp/
+temp/
