@@ -164,6 +164,13 @@ The landing page has a unified query bar. When you submit a query:
 - **Geospatial:** Google Earth Engine (MODIS, CORINE, Sentinel-2, VIIRS, Dynamic World, CHIRPS, SRTM)
 - **Maps:** Leaflet with OpenStreetMap, CARTO, and Google Satellite basemaps
 
+## Authors
+
+- Senyang Li (sneyang.li@utwente.nl)
+- Tong Jiang (tong.jiang@utwente.nl)
+- Rosa Aguilar (r.aguilar@utwente.nl)
+- Alex-Andrei Cuvuliuc (alex-andrei.cuvuliuc@utwente.nl)
+
 ## License
 
 MIT

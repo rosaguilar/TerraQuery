@@ -2,6 +2,12 @@
   "name": "terraquery",
   "version": "1.0.0",
   "description": "TerraQuery — AI-powered geospatial analysis platform",
+  "contributors": [
+    "Senyang Li <sneyang.li@utwente.nl>",
+    "Tong Jiang <tong.jiang@utwente.nl>",
+    "Rosa Aguilar <r.aguilar@utwente.nl>",
+    "Alex-Andrei Cuvuliuc <alex-andrei.cuvuliuc@utwente.nl>"
+  ],
   "scripts": {
     "start": "concurrently \"npm run server\" \"npm run client\"",
     "server": "cd server && npm start",

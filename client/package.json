@@ -3,6 +3,12 @@
   "private": true,
   "version": "1.0.0",
   "type": "module",
+  "contributors": [
+    "Senyang Li <sneyang.li@utwente.nl>",
+    "Tong Jiang <tong.jiang@utwente.nl>",
+    "Rosa Aguilar <r.aguilar@utwente.nl>",
+    "Alex-Andrei Cuvuliuc <alex-andrei.cuvuliuc@utwente.nl>"
+  ],
   "scripts": {
     "dev": "vite",
     "build": "tsc -b && vite build",
