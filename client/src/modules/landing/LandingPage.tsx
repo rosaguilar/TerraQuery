@@ -348,7 +348,18 @@ export default function LandingPage() {
                       Deep dive <ArrowRight className="w-4 h-4" />
                     </button>
                   </div>
-                  <p className="text-sm text-slate-400">{results.urban.summary}</p>
+                  {results.urban.story ? (
+                    <div className="prose prose-invert prose-sm max-w-none text-slate-300 [&_h3]:text-sm [&_h3]:font-bold [&_h3]:text-slate-200 [&_h3]:mt-4 [&_h3]:mb-2 [&_strong]:text-white [&_li]:mb-1 [&_p]:mb-2">
+                      <ReactMarkdown>{
+                        (results.urban.story as string)
+                          .replace(/^[\s\S]*?(?=###\s*Executive Summary)/i, '')
+                          .replace(/^\*{3}\s*/gm, '')
+                          .trim() || results.urban.story
+                      }</ReactMarkdown>
+                    </div>
+                  ) : (
+                    <p className="text-sm text-slate-400">{results.urban.summary}</p>
+                  )}
                 </div>
               )}
 

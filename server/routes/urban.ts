@@ -65,6 +65,8 @@ router.post('/story', async (req: Request, res: Response) => {
     const result = await vertexGenerate(
       `You are a senior urban planner and data storyteller writing a detailed stakeholder report for city policymakers.
 
+IMPORTANT: Start directly with the "### Executive Summary" section. Do NOT include any preamble, greeting, "To/From/Date/Subject" header, or introductory sentence before the Executive Summary. Do NOT include horizontal rules (***) before the content.
+
 **City:** ${city}
 **Metric:** ${metric.replace('_', ' ')}
 **Timeframe:** Last ${timeframeYears} years

@@ -8,6 +8,7 @@ import {
 import {
   LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer
 } from 'recharts';
+import ReactMarkdown from 'react-markdown';
 import MapBase from '../../components/MapBase';
 import { useLocation } from '../../context/LocationContext';
 
@@ -60,8 +61,8 @@ export default function UrbanApp() {
         setAgent1Status('done');
         setAgent2Status('done');
       }
-      if (orch.summary) {
-        setStory(orch.summary);
+      if (orch.story || orch.summary) {
+        setStory(orch.story || orch.summary);
         setAgent3Status('done');
       }
       window.history.replaceState({}, '');
@@ -345,10 +346,13 @@ export default function UrbanApp() {
                       <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }}
                         className="bg-white rounded-2xl p-8 shadow-sm border border-slate-200">
                         <h3 className="text-lg font-semibold text-slate-800 mb-4">Stakeholder Report</h3>
-                        <div className="prose prose-slate max-w-none">
-                          {story.split('\n\n').map((paragraph, idx) => (
-                            <p key={idx} className="text-slate-600 leading-relaxed mb-4 last:mb-0">{paragraph}</p>
-                          ))}
+                        <div className="prose prose-slate max-w-none [&_h3]:text-base [&_h3]:font-bold [&_h3]:text-slate-800 [&_h3]:mt-6 [&_h3]:mb-3 [&_h3]:border-b [&_h3]:border-slate-200 [&_h3]:pb-2 [&_strong]:text-slate-900 [&_li]:mb-1.5 [&_ul]:pl-5 [&_p]:text-slate-600 [&_p]:leading-relaxed [&_p]:mb-3 [&_hr]:my-4">
+                          <ReactMarkdown>{
+                            story
+                              .replace(/^[\s\S]*?(?=###\s*Executive Summary)/i, '')
+                              .replace(/^\*{3}\s*/gm, '')
+                              .trim() || story
+                          }</ReactMarkdown>
                         </div>
                       </motion.div>
                     )}

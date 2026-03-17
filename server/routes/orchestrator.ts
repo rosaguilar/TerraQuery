@@ -104,7 +104,27 @@ Return ONLY valid JSON with:
       promises.push(
         fetch(`${baseUrl}/api/urban/analyze?city=${encodeURIComponent(uq.city)}&metric=${encodeURIComponent(uq.metric)}&years=${uq.years}`)
           .then(r => r.json())
-          .then(data => { results.urban = data; })
+          .then(async (data: any) => {
+            results.urban = data;
+            // Also generate the detailed stakeholder story
+            if (data.data && data.trend) {
+              try {
+                const storyRes = await fetch(`${baseUrl}/api/urban/story`, {
+                  method: 'POST',
+                  headers: { 'Content-Type': 'application/json' },
+                  body: JSON.stringify({
+                    city: uq.city,
+                    metric: uq.metric,
+                    timeframeYears: uq.years,
+                    trend: data.trend,
+                    dataSummary: data.summary,
+                  }),
+                });
+                const storyData = await storyRes.json() as any;
+                if (storyData.story) results.urban.story = storyData.story;
+              } catch {}
+            }
+          })
           .catch(err => { results.urban = { error: err.message }; })
       );
     }
