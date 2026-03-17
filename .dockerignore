@@ -1,32 +1,11 @@
-# Dependencies
-node_modules/
-client/node_modules/
-server/node_modules/
-
-# Build outputs
-client/dist/
-server/dist/
-
-# Git
-.git
-.gitignore
-
-# Environment files
+node_modules
+server/node_modules
+client/node_modules
+client/dist
+client-dist
 .env
-.env.*
-
-# IDE files
-.vscode/
-.idea/
-
-# Temp files
+.git
+.claude
 *.log
-temp-sa-key.json
-temp-sa.json
-temp-test-key.json
+temp-*
 .gcp-credentials.json
-service-account-key.json
-
-# Docker files
-Dockerfile
-.dockerignore

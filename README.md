@@ -110,7 +110,7 @@ PORT=3001
 4. Create a JSON key and paste its contents into `GOOGLE_APPLICATION_CREDENTIALS_JSON`
 5. Register the service account for Earth Engine at [signup.earthengine.google.com](https://signup.earthengine.google.com)
 
-### 4. Run
+### 4. Run (Development)
 
 ```bash
 npm start
@@ -119,6 +119,29 @@ npm start
 This starts both the backend (port 3001) and frontend (port 5173) concurrently.
 
 Open **http://localhost:5173** in your browser.
+
+### 5. Run with Docker (Production)
+
+Build and run with Docker:
+
+```bash
+docker build -t terraquery .
+docker run -d --name terraquery -p 8080:8080 --env-file .env terraquery
+```
+
+> **Note:** Docker's `--env-file` does not support quoted values. If your `GOOGLE_APPLICATION_CREDENTIALS_JSON` contains single quotes, pass it directly instead:
+>
+> ```bash
+> docker run -d --name terraquery -p 8080:8080 \
+>   -e "GOOGLE_APPLICATION_CREDENTIALS_JSON=$(cat your-service-account.json | tr -d '\n')" \
+>   -e "GCP_PROJECT_ID=your-project-id" \
+>   -e "VERTEX_REGION=us-central1" \
+>   terraquery
+> ```
+
+Open **http://localhost:8080** in your browser.
+
+The Docker image uses a multi-stage build: the client is compiled with Vite, the server is compiled with TypeScript, and the production image runs the compiled JavaScript with Node.js behind a non-root user.
 
 ## How It Works
 
