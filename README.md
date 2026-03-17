@@ -2,7 +2,7 @@
 
 **Live Application:** [https://terraquery-383351027149.europe-west4.run.app](https://terraquery-383351027149.europe-west4.run.app)
 
-A unified AI-powered geospatial analysis platform that combines four specialized modules into a single application. Ask any question about any place on Earth — an LLM orchestrator routes your query to the right tool automatically.
+An integrated AI-powered geospatial analysis platform that combines four specialized modules into a single application. Ask any question about any place on Earth — an LLM orchestrator routes your query to the right tool automatically.
 
 ## Modules
 
