@@ -16,7 +16,7 @@ Analyze land cover transitions over decades using MODIS (global, 2001-2024) and 
 Multi-agent system for city stakeholders. Tracks green areas (NDVI trends), industrial movement (nighttime lights), and urban expansion over 1-5 years. Three AI agents work in sequence: intent parsing, Earth Engine data gathering, and detailed stakeholder report generation with executive summary, key findings, analysis, implications, and recommended actions.
 
 ### Vegetation Explorer
-Multi-dataset environmental analysis with six GEE datasets: Sentinel-2 NDVI, MODIS NDVI, MODIS Land Surface Temperature, VIIRS Nighttime Lights, Dynamic World Built-up, and CHIRPS Precipitation. Sidebar-driven or natural language queries with trend charts and map overlays.
+Multi-dataset environmental analysis with six GEE datasets: Sentinel-2 NDVI, MODIS NDVI, MODIS Land Surface Temperature, VIIRS Nighttime Lights, Dynamic World Built-up, and CHIRPS Precipitation dataset. Sidebar-driven or natural language queries with trend charts and map overlays.
 
 ## Architecture
 
