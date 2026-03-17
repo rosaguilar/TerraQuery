@@ -6,14 +6,14 @@ function getVertexAI(): VertexAI {
   if (vertexAIInstance) return vertexAIInstance;
 
   const projectId = process.env.GCP_PROJECT_ID;
-  const location = process.env.VERTEX_REGION || 'global';
+  const location = process.env.VERTEX_REGION || 'europe-west4';
   if (!projectId) {
     throw new Error('GCP_PROJECT_ID is missing from the environment variables.');
   }
   vertexAIInstance = new VertexAI({
     project: projectId,
     location: location,
-    apiEndpoint: 'us-central1-aiplatform.googleapis.com'
+    apiEndpoint: `${location}-aiplatform.googleapis.com`
   });
   return vertexAIInstance;
 }

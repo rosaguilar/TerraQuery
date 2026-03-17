@@ -38,3 +38,6 @@ service-account-key.json
 # Temporary
 tmp/
 temp/
+.env.yaml
+.env.cloudrun
+convert-env.mjs

@@ -1,6 +1,6 @@
 # TerraQuery
 
-**Live Application:** [https://terraquery-383351027149.us-central1.run.app](https://terraquery-383351027149.us-central1.run.app)
+**Live Application:** [https://terraquery-383351027149.europe-west4.run.app](https://terraquery-383351027149.europe-west4.run.app)
 
 A unified AI-powered geospatial analysis platform that combines four specialized modules into a single application. Ask any question about any place on Earth — an LLM orchestrator routes your query to the right tool automatically.
 
@@ -95,8 +95,8 @@ GOOGLE_APPLICATION_CREDENTIALS_JSON={"type":"service_account","project_id":"your
 # Required: Your GCP project ID
 GCP_PROJECT_ID=your-project-id
 
-# Optional: Vertex AI region (default: us-central1, recommended for Earth Engine)
-VERTEX_REGION=us-central1
+# Optional: Vertex AI region (default: europe-west4, recommended for Earth Engine)
+VERTEX_REGION=europe-west4
 
 # Optional: Server port (default: 3001)
 PORT=3001
@@ -137,7 +137,7 @@ docker run -d --name terraquery -p 8080:8080 --env-file .env terraquery
 > docker run -d --name terraquery -p 8080:8080 \
 >   -e "GOOGLE_APPLICATION_CREDENTIALS_JSON=$(cat your-service-account.json | tr -d '\n')" \
 >   -e "GCP_PROJECT_ID=your-project-id" \
->   -e "VERTEX_REGION=us-central1" \
+>   -e "VERTEX_REGION=europe-west4" \
 >   terraquery
 > ```
 
